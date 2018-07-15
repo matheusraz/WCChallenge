@@ -5,7 +5,7 @@ import { TrackerComponent } from './bus/tracker/tracker.component';
 import { CompanyRoutingModule } from './company-routing.module';
 import { CompanyComponent } from './company.component';
 import { BusComponent } from './bus/bus.component';
-import { CompanyService } from './company.service';
+import { TeamService } from './team.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
@@ -20,7 +20,7 @@ import { HttpModule } from '@angular/http';
     })
   ],
   providers: [
-    CompanyService
+    TeamService
   ],
   declarations: [
     CompanyComponent,

@@ -11,15 +11,15 @@ import { HttpModule, Http, Response, Headers, RequestOptions } from '@angular/ht
 const SERVER_URL = 'http://localhost:8081';
 
 @Injectable()
-export class CompanyService {
+export class TeamService {
   private socket;
 
   constructor(private httpClient: HttpClient, private http: Http) {
 
    }
 
-  companies(): Observable<any> {
-    return this.httpClient.get('http://localhost:8080/getAllCompanies');
+  teams(): Observable<any> {
+    return this.httpClient.get('http://localhost:8080/teams');
   }
 
   buses(companyName: string): Observable<any> {

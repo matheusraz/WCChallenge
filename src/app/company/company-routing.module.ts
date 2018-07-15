@@ -9,7 +9,7 @@ const busRoutes: Routes = [
     component: CompanyComponent,
     children: [
         {
-            path: ':name/bus',
+            path: ':country/matches',
             component: BusComponent,
             children: [
                 {

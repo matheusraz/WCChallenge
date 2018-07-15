@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Tracker } from '../../../models/tracker.model';
-import { CompanyService } from '../../company.service';
+import { TeamService } from '../../team.service';
 import { Event } from '../../../models/event';
 import { ActivatedRoute } from '@angular/router';
 
@@ -23,7 +23,7 @@ export class TrackerComponent implements OnInit {
   //   longitude: 7.809007,
   //   time: '12h30'};
 
-  constructor(private companyService: CompanyService, private route: ActivatedRoute) { }
+  constructor(private companyService: TeamService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.companyName = this.route.snapshot['_routerState'].url.split('/', 3)[2]

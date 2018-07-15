@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Company } from '../models/company.model';
-import { CompanyService } from './company.service';
+import { Team } from '../models/team.model';
+import { TeamService } from './team.service';
 
 @Component({
   selector: 'tcc-company',
@@ -9,28 +9,28 @@ import { CompanyService } from './company.service';
 })
 export class CompanyComponent implements OnInit {
 
-  // public companies: Company[] = [];
-  public companies: Company[] = [
-    {name: 'E1'},
-    {name: 'E2'},
-    {name: 'E3'},
-    {name: 'E9'}
-  ];
+  public teams: Team[] = [];
 
-  constructor(private companyService: CompanyService) { }
+  constructor(private teamService: TeamService) { }
 
   ngOnInit() {
 
-    const company: Company = new Company('');
+    const team: Team = new Team(null,null,null,null,null,null);
 
-    this.companyService.companies().subscribe(
-      data => { data.forEach(name => {
-        company.name = name;
-        this.companies.push(company);
+    this.teamService.teams().subscribe(
+      data => { data.forEach((id, country, alternate_name, fifa_code, group_id, group_letter) => {
+        team.id = id;
+        team.country = country;
+        team.alternateName = alternate_name;
+        team.fifa_code = fifa_code;
+        team.groupid = group_id;
+        team.groupletter = group_letter;
+        this.teams.push(team);
       });
+      console.log(data);
     },
       err => console.error(err),
-      () => console.log('done loading companies')
+      () => console.log('done loading teams')
     );
   }
 }

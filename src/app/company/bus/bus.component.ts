@@ -1,7 +1,7 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Bus } from '../../models/bus.model';
-import { CompanyService } from '../company.service';
+import { TeamService } from '../team.service';
 
 @Component({
   selector: 'tcc-bus',
@@ -37,7 +37,7 @@ export class BusComponent implements OnInit {
     {registration: 6046}
   ];
 
-  constructor(private companyService: CompanyService, private route: ActivatedRoute) { }
+  constructor(private companyService: TeamService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.companyName = this.route.snapshot.paramMap.get('name');
